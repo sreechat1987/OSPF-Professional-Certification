@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise OSPF Certification Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Main Navigation Bar -->
+        <nav class="top-navbar no-print">
+            <div class="nav-container">
+                <span class="portal-logo">🛡️ Dev's Academy</span>
+                <span class="nav-title">OSPF Engineering Examination</span>
+            </div>
+        </nav>
+
+        <main class="content-container">
+            
+            <!-- Login Screen -->
+            <section id="login-screen" class="card fade-in">
+                <h2>OSPF Professional Certification</h2>
+                <p class="subtitle">Please provide your engineering credentials to unlock the terminal and begin the assessment.</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="candidate-name">Full Name</label>
+                        <input type="text" id="candidate-name" required placeholder="e.g., John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="candidate-email">Email Address</label>
+                        <input type="email" id="candidate-email" required placeholder="e.g., john@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="candidate-roll">Roll Number (Unique ID)</label>
+                        <input type="text" id="candidate-roll" required placeholder="e.g., DEV-98754">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Initialize Assessment</button>
+                </form>
+            </section>
+
+            <!-- Exam Screen -->
+            <section id="exam-screen" class="exam-grid" style="display: none;">
+                <div class="exam-main card">
+                    <div class="question-header">
+                        <span id="question-number-badge">Question 1 of 10</span>
+                        <h3 id="question-text">Loading question...</h3>
+                    </div>
+                    <div id="options-container" class="options-list">
+                        <!-- Options generated dynamically -->
+                    </div>
+                    <div class="exam-actions">
+                        <button id="btn-prev" class="btn btn-secondary" disabled>Previous</button>
+                        <button id="btn-next" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+
+                <aside class="exam-sidebar no-print">
+                    <div class="card sidebar-block text-center">
+                        <span class="block-label">Time Remaining</span>
+                        <div id="timer-display" class="timer-text">10:00</div>
+                    </div>
+
+                    <div class="card sidebar-block">
+                        <span class="block-label">Navigator</span>
+                        <div id="navigator-grid" class="nav-grid">
+                            <!-- Nav buttons generated dynamically -->
+                        </div>
+                    </div>
+
+                    <button id="btn-submit-exam" class="btn btn-success w-100">Submit Answers</button>
+                </aside>
+            </section>
+
+            <!-- Result Screen -->
+            <section id="result-screen" class="card fade-in" style="display: none;">
+                <div class="result-header text-center">
+                    <div id="status-icon" class="status-marker">🏆</div>
+                    <h2 id="result-title">Congratulations!</h2>
+                    <p id="result-subtitle" class="subtitle">You have successfully cleared the examination framework.</p>
+                </div>
+
+                <div class="stats-box">
+                    <div class="stat-row">
+                        <span>Candidate Name:</span>
+                        <strong id="res-name">-</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Roll Number:</span>
+                        <strong id="res-roll">-</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Score Obtained:</span>
+                        <strong id="res-score">-</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Percentage:</span>
+                        <strong id="res-percent">-</strong>
+                    </div>
+                </div>
+
+                <div class="action-row no-print">
+                    <button id="btn-cert" class="btn btn-success" style="display: none;">Download Certificate</button>
+                    <button onclick="location.reload()" class="btn btn-secondary">Restart Portal</button>
+                </div>
+            </section>
+
+            <!-- Print-Optimized Certificate -->
+            <section id="certificate-template" class="certificate-sheet">
+                <div class="cert-border">
+                    <div class="cert-content">
+                        <div class="cert-academy">DEV'S ACADEMY OF NETWORKING</div>
+                        <div class="cert-award">CERTIFICATE OF PROMINENCE</div>
+                        <div class="cert-subtext">This document serves to certify that professional candidate</div>
+                        <div class="cert-name" id="cert-candidate-name">Jane Doe</div>
+                        <div class="cert-subtext">has successfully passed all testing standards of the structured exam</div>
+                        <div class="cert-title">OSPF Routing Architecture Assessment</div>
+                        <div class="cert-meta">
+                            <div>
+                                <span class="meta-label">Credential Verification</span>
+                                <strong class="meta-val" id="cert-roll-number">DEV-00000</strong>
+                            </div>
+                            <div>
+                                <span class="meta-label">Assessment Score</span>
+                                <strong class="meta-val" id="cert-percentage">100%</strong>
+                            </div>
+                            <div>
+                                <span class="meta-label">Date of Issue</span>
+                                <strong class="meta-val" id="cert-date">August, 2026</strong>
+                            </div>
+                        </div>
+                        <div class="cert-seal">
+                            <div class="seal-inner">OSPF PRO</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

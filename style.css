@@ -1,0 +1,404 @@
+/* Custom Palette Definitions */
+:root {
+    --slate-primary: #0f172a;
+    --slate-border: #e2e8f0;
+    --theme-gold: #b45309;
+    --theme-gold-light: #fef3c7;
+    --sky-accent: #0284c7;
+    --sky-hover: #0369a1;
+    --green-valid: #16a34a;
+    --white: #ffffff;
+    --bg-main: #f8fafc;
+    --font-stack: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--slate-primary);
+    line-height: 1.5;
+}
+
+.top-navbar {
+    background-color: var(--slate-primary);
+    color: var(--white);
+    padding: 1rem 5%;
+    border-bottom: 3px solid var(--sky-accent);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portal-logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.nav-title {
+    font-size: 0.9rem;
+    color: var(--slate-border);
+}
+
+.content-container {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--slate-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--slate-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    font-family: var(--font-stack);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--sky-accent);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-stack);
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--sky-accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--sky-hover);
+}
+
+.btn-secondary {
+    background-color: var(--slate-border);
+    color: var(--slate-primary);
+}
+
+.btn-success {
+    background-color: var(--green-valid);
+    color: var(--white);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.w-100 { width: 100%; }
+.text-center { text-align: center; }
+
+/* Exam Layout */
+.exam-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+}
+
+.options-list {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-node {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--slate-border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.option-node:hover {
+    border-color: var(--sky-accent);
+    background-color: #f0f9ff;
+}
+
+.option-node.selected {
+    border-color: var(--sky-accent);
+    background-color: #e0f2fe;
+}
+
+.option-node input {
+    margin-right: 1rem;
+    transform: scale(1.2);
+}
+
+.exam-actions {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--slate-border);
+    padding-top: 1.5rem;
+}
+
+.exam-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sidebar-block {
+    padding: 1.5rem;
+}
+
+.block-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timer-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--slate-primary);
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    aspect-ratio: 1;
+    border: 1px solid var(--slate-border);
+    background: var(--bg-main);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn.active {
+    background-color: var(--sky-accent);
+    color: var(--white);
+    border-color: var(--sky-accent);
+}
+
+.nav-btn.answered {
+    background-color: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+/* Result Screen */
+.status-marker {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.stats-box {
+    margin: 2rem 0;
+    border: 1px solid var(--slate-border);
+    border-radius: 8px;
+    background-color: var(--bg-main);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--slate-border);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.action-row {
+    display: flex;
+    gap: 1rem;
+}
+
+/* PDF Certificate (Hidden in Standard Screen View) */
+.certificate-sheet {
+    display: none;
+}
+
+/* Print Styles optimization for PDF download */
+@media print {
+    body, html {
+        background: var(--white) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+    }
+    .no-print {
+        display: none !important;
+    }
+    #certificate-template {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .cert-border {
+        border: 15px double var(--theme-gold) !important;
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .cert-content {
+        text-align: center;
+        border: 2px solid var(--theme-gold-light);
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    .cert-academy {
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: var(--slate-primary);
+        margin-bottom: 25px;
+    }
+    .cert-award {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--theme-gold);
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+    .cert-subtext {
+        font-size: 1rem;
+        font-style: italic;
+        color: #475569;
+        margin-bottom: 15px;
+    }
+    .cert-name {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: var(--slate-primary);
+        text-decoration: underline;
+        margin: 15px 0;
+    }
+    .cert-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--sky-accent);
+        margin-bottom: 40px;
+    }
+    .cert-meta {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid var(--slate-border);
+        padding-top: 30px;
+    }
+    .meta-label {
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: #64748b;
+    }
+    .meta-val {
+        font-size: 1rem;
+        color: var(--slate-primary);
+    }
+    .cert-seal {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 100px;
+        height: 100px;
+        border: 4px dashed var(--theme-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .seal-inner {
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--theme-gold);
+        transform: rotate(-15deg);
+    }
+}
+
+/* Animation utilities */
+.fade-in {
+    animation: simpleFade 0.3s ease-out forwards;
+}
+
+@keyframes simpleFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
